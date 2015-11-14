@@ -1,6 +1,8 @@
 package com.example.student.butraffic;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +40,10 @@ public class MainActivity extends AppCompatActivity {  //การประก�
                 //getBase คือการบอกว่าแหล่งกำหนดเสียงเสียงไม่ได้อยู่ภายนอกนะ
                 buttonPlayer.start();
 
-                //Inter to WebView
+                //Inter to WebView คือการกำหนด เวลากดแล้ว ไปยังเว็บไซต์
+                Intent objIntent = new Intent(new Intent(Intent.ACTION_VIEW));
+                objIntent.setData(Uri.parse("https://mail.google.com/mail/u/0/#inbox"));   //ใส่ "...." ทุกครั้งเมื่อทำการใส่เว็บ
+                startActivity(objIntent);//คำสั่งเริ่มสตาร์หรือทำงานของเว็บ start เสมอ
 
 
             }// event
